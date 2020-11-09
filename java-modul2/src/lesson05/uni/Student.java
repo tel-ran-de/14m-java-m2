@@ -4,9 +4,23 @@ import java.util.Objects;
 
 public final class Student extends UniUser {
     private String subject;
+    private double noteRange;
+    private boolean closedSessions;
+    private boolean payForStudy;
 
     public Student(String firstName) {
         super(firstName);
+    }
+
+    public Student(String firstName, int age, boolean payForStudy) {
+        super(firstName, age);
+        this.payForStudy = payForStudy;
+    }
+
+    public Student(String firstName, String secondName, String uniID, int yearOfEnter, String address, double noteRange, boolean closedSessions) {
+        super(firstName, secondName, uniID, yearOfEnter, address);
+        this.noteRange = noteRange;
+        this.closedSessions = closedSessions;
     }
 
     public Student(String uniID, int age, String subject) {
@@ -18,9 +32,16 @@ public final class Student extends UniUser {
         super(firstName, secondName, uniID, age);
     }
 
+    public void paidStudy() {
+        System.out.println("Учеба оплачена: " + payForStudy);
+    }
 
     public void study() {
         System.out.println("Должен учиться, учиться и ещё раз учиться!");
+    }
+
+    public boolean isPayForStudy() {
+        return payForStudy;
     }
 
     @Override
