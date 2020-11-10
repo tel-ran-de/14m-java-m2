@@ -1,5 +1,6 @@
 package de.telran.application;
 
+import de.telran.dao.Library;
 import de.telran.data.Book;
 
 public class LibraryApp {
@@ -19,5 +20,22 @@ public class LibraryApp {
                 "Little prince",
                 "Antoine de Saint-Exupery", 200, 1943);
 
+        Library myLib = new Library(10);
+        System.out.println("Размер " + myLib.getSize());
+        myLib.addBook(book1);
+        System.out.println("Размер " + myLib.getSize());
+        myLib.display();
+        System.out.println(myLib.addBook(book2));
+        System.out.println(myLib.addBook(book3));
+        System.out.println(myLib.addBook(book4));
+        myLib.display();
+        myLib.deleteBookFromArray(book2);
+        System.out.println("Удалили вторую книгу, первый индекс");
+        myLib.display();
+        System.out.println(myLib.getSize());
+        System.out.println("тестовая распечатка");
+        myLib.displayDeleteBook();
+        System.out.println("------------------");
+        myLib.displayAllArray();
     }
 }
