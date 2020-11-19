@@ -1,4 +1,4 @@
-package lesson04.fraction;
+package lesson12;
 
 public class Fraction extends Number {
     private int numerator;
